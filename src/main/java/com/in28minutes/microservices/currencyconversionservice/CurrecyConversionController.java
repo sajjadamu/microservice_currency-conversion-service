@@ -42,6 +42,8 @@ public class CurrecyConversionController {
 
 		CurrencyConversionBean response = currencyExchangeServiceProxy.retrieveExchangeValue(from, to);
 
+		System.out.println("conversion respose get "+response);
+		
 		return new CurrencyConversionBean(response.getId(), from, to, response.getConversionMultiple(), quantity,
 				quantity.multiply(response.getConversionMultiple()), response.getPort());
 	}
